@@ -60,7 +60,7 @@ POSSIBILITY OF SUCH DAMAGE.
 <body>
     <div id="content">
         <div id="header">
-            <h1>Hello <span id='fullname'>${canvasRequest.context.userContext.fullName}</span>!</h1>
+            <h1>Hello Mr.<span id='fullname'>${canvasRequest.context.userContext.fullName}</span>!</h1>
             <h2>Welcome to the Force.com Canvas Java Quick Start Template!</h2>
         </div>
 
