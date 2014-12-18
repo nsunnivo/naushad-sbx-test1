@@ -95,6 +95,8 @@ public class CanvasController extends AbstractServlet {
 		        System.getenv("CANVAS_CONSUMER_SECRET"));
 		request.setAttribute("canvasRequest", cr);
 		request.setAttribute("canvasRequestJson", SignedRequest.toString(cr));
+        //cr.getClient().getOAuthToken()
+        //cr.getContext().getUserContext().getFirstName()
 
 		String resource = String.format("/%s/index.jsp", cr.getContext()
 		        .getEnvironmentContext().getDisplayLocation());

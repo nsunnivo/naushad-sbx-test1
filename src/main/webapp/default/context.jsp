@@ -52,6 +52,10 @@ Below is a sample of that information:
       <td><b>Company: </b></td>
       <td><span id='company'>${canvasRequest.context.organizationContext.name}</span></td>
     </tr>
+    <tr>
+      <td><b>Authorization Token: </b></td>
+      <td><span id='authToken'>${canvasRequest.client.OAuthToken}</span></td>
+    </tr>
     <c:if test="${!empty canvasRequest.context.environmentContext.record.Id}" >
       <tr>
         <td colspan="2">You are currently viewing <b>${canvasRequest.context.environmentContext.record.attributes.type} ${canvasRequest.context.environmentContext.record.Id}</b></td>
