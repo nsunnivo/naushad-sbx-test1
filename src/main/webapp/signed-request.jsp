@@ -85,7 +85,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <div id="page">
         <div id="content">
             <div id="header">
-                <h1 >Hello <span id='fullname'></span>!</h1>
+                <h1 >Hello Mr. <span id='fullname'></span>!</h1>
                 <h2>Welcome to the Force.com Canvas Java Quick Start Template!</h2>
             </div>
 
