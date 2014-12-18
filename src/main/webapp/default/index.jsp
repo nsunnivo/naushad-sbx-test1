@@ -51,6 +51,7 @@ POSSIBILITY OF SUCH DAMAGE.
         Sfdc.canvas(function() {
             var photoUri = sr.context.user.profileThumbnailUrl +  "?oauth_token=" + sr.client.oauthToken;
             alert(sr.client.oauthToken);
+            alert(st.client.refreshToken);
             Sfdc.canvas.byId('header').style.backgroundImage =  "url('"+(photoUri.indexOf("http")==0 ? "" :sr.client.instanceUrl) + photoUri+"')";
             resetSize();
             initTabs();
