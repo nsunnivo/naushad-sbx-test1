@@ -56,6 +56,10 @@ Below is a sample of that information:
       <td><b>Authorization Token: </b></td>
       <td><span id='authToken'>${canvasRequest.client.OAuthToken}</span></td>
     </tr>
+    <tr>
+      <td><b>Query Result</b></td>
+      <td><span id='queryResult'>${sfdcResp}</span></td>
+    </tr>
     <c:if test="${!empty canvasRequest.context.environmentContext.record.Id}" >
       <tr>
         <td colspan="2">You are currently viewing <b>${canvasRequest.context.environmentContext.record.attributes.type} ${canvasRequest.context.environmentContext.record.Id}</b></td>

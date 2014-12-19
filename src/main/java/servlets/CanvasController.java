@@ -25,15 +25,17 @@
  */
 package servlets;
 
-import java.io.IOException;
+import canvas.CanvasRequest;
+import canvas.SignedRequest;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.fluent.Request;
+import org.apache.http.impl.client.DefaultHttpClient;
+import util.UserAgent;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import util.UserAgent;
-import canvas.CanvasRequest;
-import canvas.SignedRequest;
+import java.io.IOException;
 
 /**
  * Controller for canvas requests.
@@ -97,6 +99,16 @@ public class CanvasController extends AbstractServlet {
 		request.setAttribute("canvasRequestJson", SignedRequest.toString(cr));
         //cr.getClient().getOAuthToken()
         //cr.getContext().getUserContext().getFirstName()
+
+        HttpClient client = new DefaultHttpClient();
+
+        String sfdcResponse = Request.Get("https://cs7.salesforce.com/services/data/v32.0/query/?q=SELECT+name+from+Account+limit+5")
+                .connectTimeout(5000)
+                .socketTimeout(5000)
+                .setHeader("Authorization","Bearer "+cr.getClient().getOAuthToken())
+                .execute().returnContent().asString();
+
+        request.setAttribute("sfdcResp", sfdcResponse);
 
 		String resource = String.format("/%s/index.jsp", cr.getContext()
 		        .getEnvironmentContext().getDisplayLocation());
